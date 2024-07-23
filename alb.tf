@@ -1,9 +1,3 @@
-# Author    : Ranjit Kumar Swain
-# Web       : www.ranjitswain.com
-# YouTube   : https://www.youtube.com/c/ranjitswain
-# GitHub    : https://github.com/ranjit4github
-########################################################
-
 resource "aws_lb" "alb" {
   name               = "test-lb-tf"
   internal           = false
@@ -24,7 +18,7 @@ resource "aws_lb_target_group" "albtg" {
   port     = 80
   protocol = "HTTP"
   target_type = "instance"
-  vpc_id   = aws_vpc.main.id
+  vpc_id   = aws_vpc.master.id
 
   health_check {    
     healthy_threshold   = 3    
