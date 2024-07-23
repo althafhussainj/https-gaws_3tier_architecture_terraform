@@ -1,9 +1,3 @@
-# Author    : Ranjit Kumar Swain
-# Web       : www.ranjitswain.com
-# YouTube   : https://www.youtube.com/c/ranjitswain
-# GitHub    : https://github.com/ranjit4github
-########################################################
-
 resource "aws_route_table" "rtb" {
   vpc_id = aws_vpc.main.id
 
@@ -29,7 +23,7 @@ resource "aws_route_table_association" "b" {
 }
 */
 //Adding NAT Gateway into the default main route table
-resource "aws_default_route_table" "dfltrtb" {
+resource "aws_default_route_table" "My-nat-gw" {
   default_route_table_id = aws_vpc.main.default_route_table_id
 
   route {
@@ -38,6 +32,6 @@ resource "aws_default_route_table" "dfltrtb" {
   }
 
   tags = {
-    Name = "dfltrtb"
+    Name = "My-nat-gw"
   }
 }
