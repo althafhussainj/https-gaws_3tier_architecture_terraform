@@ -18,7 +18,7 @@ resource "aws_lb_target_group" "albtg" {
   port     = 80
   protocol = "HTTP"
   target_type = "instance"
-  vpc_id   = aws_vpc.master.id
+  vpc_id   = aws_vpc.main.id
 
   health_check {    
     healthy_threshold   = 3    
